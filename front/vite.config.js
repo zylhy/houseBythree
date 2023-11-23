@@ -8,7 +8,7 @@ export default defineConfig({
   plugins: [vue(), AutoImport({
     imports: ['vue', 'vue-router', {
       '@/utils/index.js': [
-        'getRandomInt'
+        'requireAssets'
       ],
     }
     ],
@@ -20,7 +20,8 @@ export default defineConfig({
   })],
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src')
+      '@': resolve(__dirname, 'src'),
+      'images': resolve(__dirname, 'src/assets/images'),
     }
   },
   server: {
